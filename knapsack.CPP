@@ -23,7 +23,7 @@ int knapsack(const vector<int> &val, const vector<int> &wt, const int &W){
                 continue;    
             }
             
-            if(i-1 >= 0 && j < wt[i])
+            if(j < wt[i])
                 T[i][j] = T[i-1][j];
             else
                 T[i][j] = max(val[i] + T[i-1][j-wt[i]] , T[i-1][j]);            
