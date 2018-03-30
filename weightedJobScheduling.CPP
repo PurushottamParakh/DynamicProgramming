@@ -29,7 +29,6 @@ class job{
 };
 
 void printjobs(vector<job> &jobs){
-
   for(uint i=0; i<jobs.size();++i)
     cout << jobs[i].getprofit() << " ";
   cout << endl;
@@ -59,7 +58,7 @@ bool donotOverlap(job i, job j){
   return true;
 }
 
-int schedule(vector<job> jobs){
+int schedule(vector<job> &jobs){
     
     sort(jobs.begin(), jobs.end(), [](job &a, job& b){return a.getEnd() < b.getEnd();});
     printjobs(jobs);
@@ -75,7 +74,6 @@ int schedule(vector<job> jobs){
         }   
         printArray(T); 
     }  
-    
     return *max_element(T.begin(), T.end());
 }
 
