@@ -49,12 +49,9 @@ bool donotOverlap(job i, job j){
   if(ie > je)
     return donotOverlap(j,i);
   
-  if(is <= js && js < ie)
+  if(js < ie)
     return false;
-    
-  if(js <= is)
-    return false;
-    
+  
   return true;
 }
 
